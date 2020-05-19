@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% block title %} Power Engineering {% endblock %}
+
+{% load static %}
+{% block content %}
+     <div class="container-fluid">
+
+
+        <!-- list items -->
+   <div class="container-fluid">
+   
+
+
+
+
+       {% for note in noteslist %}
+
+
+<div class="col-md-6 col-lg-3 ftco-animate">
+    			
+    				<div class="product" >
+    					<a href="" class="img-prod">
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="panel panel-default">
+                    <div class="panel-heading"><b  style="color: grey; font-size: 18px">{{ note.filename }}</b></div>
+                      
+                    </div>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="{{ note.filelink }}">download here</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						
+		    					</div>
+	    					</div>
+    						<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				
+    			</div>
+
+
+
+
+
+
+
+          
+
+       {% endfor %}
+   <!--searching a note-->
+
+
+<h6> Do you have notes and books on your drive then support us</h6>
+
+<a href="{% url 'UploadNotes' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload Your Books and Notes Link</a>
+
+
+   </div>
+</div>
+{% endblock %}
