@@ -1,1 +1,1 @@
-web: gunicorn OpenPowerEngineering.wsgi
+web: gunicorn deep_diary.wsgi
