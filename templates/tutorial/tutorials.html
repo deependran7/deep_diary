@@ -2,6 +2,17 @@
 {% load static %}
 
 {% block content %}
+<div class="hero-wrap hero-bread" style="background-image: url({% static 'images/tutorials.png' %});">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Find Your </a></span> <span>Solution</span></p>
+            <h1 class="mb-0 bread">Tutorials</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     
 
     <section class="ftco-section">
@@ -11,22 +22,22 @@
     				<ul class="product-category">
     					<li><a href="#" class="active">All</a></li>
               {% for ctg in category %}
-    					<li><a href="#">{{ ctg.name }}</a></li>
+    					<li><a href="">{{ ctg.name }}</a></li>
               {% endfor %}
     				</ul>
     			</div>
     		</div>
     		<div class="row">
-          {% if articles %}
-          {% for article in articles %}
+          {% if tutorials %}
+          {% for tutorial in tutorials %}
     			<div class="col-md-6 col-lg-3 ftco-animate">
     			
     				<div class="product" >
-    					<a href="{% url 'tut_details' article.id %}" class="img-prod"><img class="img-fluid" src="{{ article.photo.url }}" alt="Colorlib Template">
+    					<a href="{% url 't_details' tutorial.id %}" class="img-prod"><img class="img-fluid" src="{{ tutorial.photo.url }}" alt="Colorlib Template" width="300" height="300">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="{% url 'tut_details' article.id %}">{{ article.name }}</a></h3>
+    						<h3><a href="{% url 't_details' tutorial.id %}">{{ tutorial.name }}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						
@@ -69,7 +80,7 @@
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
           	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
+          	<span>Get e-mail updates about our latest articles and tutorials</span>
           </div>
           <div class="col-md-6 d-flex align-items-center">
             <form action="#" class="subscribe-form">

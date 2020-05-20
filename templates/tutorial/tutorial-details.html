@@ -6,8 +6,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span> <span>Blog</span></p>
-            <h1 class="mb-0 bread">Blog</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}"></a></span> <span></span></p>
+            <h1 class="mb-0 bread">{{categories.name}}</h1>
           </div>
         </div>
       </div>
@@ -17,19 +17,17 @@
       <div class="container">
         <div class="row">
           <div class="col-8 ftco-animate">
-						<h2 class="mb-3">{{ post.title }}</h2>
-            {{ post.content|safe }}
+						<h2 class="mb-3">{{ tutorial.name }}</h2>
+            {{ tutorial.details|safe }}
             <div class="tag-widget post-tag-container mb-5 mt-5">
               <div class="tagcloud">
-                {% for tag in post.tag.all %}
-                <a href="#" class="tag-cloud-link">{{ tag }}</a>
-                {% endfor %}
+                
               </div>
             </div>
 
             
           </div> <!-- .col-md-8 -->
-          {% include 'blog/blog-detail-sidebar.html' %}
+          {% include 'tutorial/sidebar.html' %}
         </div>
       </div>
     </section> <!-- .section -->

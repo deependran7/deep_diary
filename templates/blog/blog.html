@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/bg_1.jpg' %});">
+    <div class="hero-wrap hero-bread" style="background-image: url({% static 'images/blog.jpg' %});">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -32,8 +32,8 @@
     		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
     		                </div>
     		                <h3 class="heading"><a href="{% url 'post-details' post.id %}">{{ post.title }}</a></h3>
-    		                <p>{{ post.content|safe|truncatewords:20 }}</p>
-    		                <p><a href="{% url 'post-details' post.id %}" class="btn btn-primary py-2 px-3">Read more</a></p>
+    		                <p>{{ post.content|safe|truncatewords:50 }}</p>
+    		                <p><a href="{% url 'post-details' post.id %}" class="btn btn-primary btn-lg active">Read more</a></p>
     		              </div>
     		            </div>
     		          </div>
@@ -45,7 +45,7 @@
 						</div>
           </div> <!-- .col-md-8 -->
 
-          {% include 'blog/sidebar.html' %}
+          {% include 'blog/blog-sidebar.html' %}
 
         </div>
       </div>

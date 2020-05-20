@@ -1,24 +1,26 @@
 from django.shortcuts import render
-from .models import Category, Article
+from .models import Category, Tutorial
 
 
-def tutorials_page(request):
+def tutorial_page(request):
     category = Category.objects.all()
-    articles = Article.objects.filter(is_draft=False)
+    tutorials = Tutorial.objects.filter(is_draft=False)
     context = {
         'category': category,
-        'articles': articles
+        'tutorials': tutorials
     }
-    return render(request, 'shop/shop.html', context)
+    return render(request, 'tutorial/tutorials.html', context)
 
-def article_details(request, article_id):
-    article = Article.objects.get(id=article_id)
-    ctg = Category.objects.get(name=article.category)
-    related_article = Article.objects.filter(category=ctg)
+def tutorial_details(request, tutorial_id):
+    tutorial = Tutorial.objects.get(id=tutorial_id)
+    ctg = Category.objects.get(name=tutorial.category)
+    related_tutorial = Tutorial.objects.filter(category=ctg)
     context = {
-        'article': article,
-        'related_article': related_article
+        'tutorial': tutorial,
+        'related_tutorial': related_tutorial,
+        'categories':ctg
     }
-    return render(request, 'shop/product-details.html', context)
+    return render(request, 'tutorial/tutorial-details.html', context)
 
+   
 

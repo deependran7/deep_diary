@@ -1,5 +1,5 @@
 """
-WSGI config for django_ecommerce project.
+WSGI config for deep_diary project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,10 +10,10 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
+#from whitenoise.django import DjangoWhiteNoise
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'deep_diary.settings')
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+#application = DjangoWhiteNoise(application)
